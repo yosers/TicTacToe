@@ -11,8 +11,8 @@ public class TicTacToe implements ActionListener {
 
     Random random = new Random();
 
-    JFrame frame = new JFrame();//creating instance of JFrame
-    JFrame mainFrame = new JFrame();//creating instance of JFrame
+    JFrame frame = new JFrame();
+    JFrame mainFrame = new JFrame();
 
     JPanel panel = new JPanel();
     JPanel titlePanel = new JPanel();
@@ -26,7 +26,7 @@ public class TicTacToe implements ActionListener {
     JFormattedTextField number = new JFormattedTextField(formatter);
 
     JButton[] buttons;
-    JButton button = new JButton();
+    JButton button;
     JButton buttonReset;
     JButton buttonInputSize;
 
@@ -69,7 +69,6 @@ public class TicTacToe implements ActionListener {
             this.showNewJFrame(new WindowAdapter() {
                 @Override
                 public void windowClosing(java.awt.event.WindowEvent e) {
-                    // here we listen for the second JFrame being closed so we can bring back the main JFrame
                     mainFrame.setVisible(true);
                 }
             }, inputNumber, false);
@@ -86,7 +85,6 @@ public class TicTacToe implements ActionListener {
             this.showNewJFrame(new WindowAdapter() {
                 @Override
                 public void windowClosing(java.awt.event.WindowEvent e) {
-                    // here we listen for the second JFrame being closed so we can bring back the main JFrame
                     frame.setVisible(true);
                 }
             }, inputNumber, true);
@@ -149,7 +147,6 @@ public class TicTacToe implements ActionListener {
             label.setForeground(new Color(25,255,0));
             label.setFont(new Font("Ink Free", Font.BOLD, 75));
             label.setHorizontalTextPosition(JLabel.CENTER);
-            label.setText("Tic-Tac-Toe");
             label.setOpaque(true);
 
             buttonPanel.setLayout(new GridLayout(inputNumber, inputNumber));
